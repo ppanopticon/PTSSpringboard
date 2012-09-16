@@ -1,0 +1,10 @@
+digraph "/Users/rgasser/Documents/Programmieren/Objective-C" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_96a17193c4bbaed89ee8050a320027ae {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_96a17193c4bbaed89ee8050a320027ae.html"];
+    dir_96a17193c4bbaed89ee8050a320027ae [shape=plaintext label="Objective-C"];
+    dir_0c74169de8fd1c031f66016042bd3d1e [shape=box label="Klassen" color="red" fillcolor="white" style="filled" URL="dir_0c74169de8fd1c031f66016042bd3d1e.html"];
+  }
+}

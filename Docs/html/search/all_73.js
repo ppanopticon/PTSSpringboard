@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['selected',['selected',['../interface_p_t_s_spring_board_item.html#a76d3be5041c6ac2c6dabc7282d08b32e',1,'PTSSpringBoardItem']]],
+  ['setbadgevalue_3a',['setBadgeValue:',['../interface_p_t_s_spring_board_item.html#a3736552820cfc155689d70a0c1be3db9',1,'PTSSpringBoardItem']]],
+  ['seticon_3a',['setIcon:',['../interface_p_t_s_spring_board_item.html#a448eb7d5de1e12b11104e66a64e84565',1,'PTSSpringBoardItem']]],
+  ['setlabel_3a',['setLabel:',['../interface_p_t_s_spring_board_item.html#a28f9e95e3f73bcbf5eb8e094b0bf1613',1,'PTSSpringBoardItem']]],
+  ['setlabelcolor_3a',['setLabelColor:',['../interface_p_t_s_spring_board_item.html#a2874a6c13028295b1408d239904b986d',1,'PTSSpringBoardItem']]],
+  ['springboard_3adeleteditem_3aatindex_3a',['springboard:deletedItem:atIndex:',['../protocol_p_t_s_spring_board_delegate-p.html#aec9d5f60a17cbc490e7e4592f712c7ae',1,'PTSSpringBoardDelegate-p']]],
+  ['springboard_3aitemforindex_3a',['springboard:itemForIndex:',['../protocol_p_t_s_spring_board_data_source-p.html#ad5aa7f40c6b92c2bb709a7e1ff9189f1',1,'PTSSpringBoardDataSource-p']]],
+  ['springboard_3amoveditem_3aatindex_3atoindex_3a',['springboard:movedItem:atIndex:toIndex:',['../protocol_p_t_s_spring_board_delegate-p.html#a64318f391a221cd6c0f700076dbe7382',1,'PTSSpringBoardDelegate-p']]],
+  ['springboard_3aselecteditem_3aatindex_3a',['springboard:selectedItem:atIndex:',['../protocol_p_t_s_spring_board_delegate-p.html#ae866a162accfc2c31b0270c5ee6d26bb',1,'PTSSpringBoardDelegate-p']]],
+  ['springboard_3ashouldallowdeletingitem_3a',['springboard:shouldAllowDeletingItem:',['../protocol_p_t_s_spring_board_data_source-p.html#a08bb417d309549d16c40d2298d94e039',1,'PTSSpringBoardDataSource-p']]],
+  ['springboard_3ashouldallowmovingitem_3a',['springboard:shouldAllowMovingItem:',['../protocol_p_t_s_spring_board_data_source-p.html#a88fa5d7c74292882db8e4ceed7602410',1,'PTSSpringBoardDataSource-p']]],
+  ['springboarddidbegindraging_3a',['springboardDidBeginDraging:',['../protocol_p_t_s_spring_board_item_delegate-p.html#a54cb77f4a41f158e2249aa8c4d13c193',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboarddidenddraging_3a',['springboardDidEndDraging:',['../protocol_p_t_s_spring_board_item_delegate-p.html#a7b2f3d7f257973f1be716b35753bf653',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboarddidentereditingmode_3a',['springboardDidEnterEditingMode:',['../protocol_p_t_s_spring_board_delegate-p.html#a3b6d2eb5407843ac27e419d0b810bb95',1,'PTSSpringBoardDelegate-p']]],
+  ['springboarddidleaveeditingmode_3a',['springboardDidLeaveEditingMode:',['../protocol_p_t_s_spring_board_delegate-p.html#a463d4591ece59742dfcfbe8324d73e93',1,'PTSSpringBoardDelegate-p']]],
+  ['springboardisdraging_3a',['springboardIsDraging:',['../protocol_p_t_s_spring_board_item_delegate-p.html#abf7b40119a58259a2af0446ac00a019a',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboardisediting',['springboardIsEditing',['../protocol_p_t_s_spring_board_item_delegate-p.html#a52f56b5972b83725876b0ff4bb6c4fa4',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboarditemdeletebuttonpressed_3a',['springboardItemDeleteButtonPressed:',['../protocol_p_t_s_spring_board_item_delegate-p.html#a2f9507221c881aa69b964851fd250587',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboarditemlongpressed_3a',['springboardItemLongPressed:',['../protocol_p_t_s_spring_board_item_delegate-p.html#a0a95cd5b63175a6b7166be6af537d89e',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboarditemtaped_3a',['springboardItemTaped:',['../protocol_p_t_s_spring_board_item_delegate-p.html#a6c7527acfbca000b6b3fa86c0a78c6a2',1,'PTSSpringBoardItemDelegate-p']]],
+  ['springboardshouldentereditingmode_3a',['springBoardShouldEnterEditingMode:',['../protocol_p_t_s_spring_board_data_source-p.html#acacf4afff60a54732a1150bb2a1de432',1,'PTSSpringBoardDataSource-p']]]
+];

@@ -1,0 +1,9 @@
+digraph "/Users/rgasser/Documents/Programmieren/Objective-C/Klassen/PTSSpringboard/PTSSpringboardDemo/PTSSpringboard" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_96a41e1d6cfe80785464ddaa46965486 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="PTSSpringboardDemo" fontname="Helvetica", fontsize="10", URL="dir_96a41e1d6cfe80785464ddaa46965486.html"]
+  dir_06eef5d1ecc26c6920f4b9d2bdefc5ca [shape=box, label="PTSSpringboard", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_06eef5d1ecc26c6920f4b9d2bdefc5ca.html"];
+  }
+}

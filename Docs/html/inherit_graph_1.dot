@@ -1,0 +1,28 @@
+digraph "سلسله مراتب گرافيکی کلاس"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="\<NSObject\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="\<PTSSpringBoardDataSource\>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_p_t_s_spring_board_data_source-p.html",tooltip="The protocol is implemented by a PTSSpringBoard data source which provides the content for a PTSSprin..."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="ViewController",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_view_controller.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="\<PTSSpringBoardDelegate\>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_p_t_s_spring_board_delegate-p.html",tooltip="The protocol is implemented by a PTSSpringBoard delegate to be informed of user-interactions occuring..."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="\<PTSSpringBoardItemDelegate\>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$protocol_p_t_s_spring_board_item_delegate-p.html",tooltip="The protocol is implemented by the PTSSpringBoard to be informed of user-interactions by a single PTS..."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="PTSSpringBoard",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_p_t_s_spring_board.html",tooltip="The PTSSpringBoard is used to display a list of user-interactable items in a view that resembles the ..."];
+  Node7 [label="\<UIAccelerometerDelegate\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node7 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="\<UIScrollViewDelegate\>",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node8 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="UIView",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node9 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="PTSSpringBoardItem",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interface_p_t_s_spring_board_item.html",tooltip="The PTSSpringBoardItem class implements attributes and behaviours of an item, that appears in a PTSSp..."];
+  Node11 [label="UIViewController",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled"];
+  Node11 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
