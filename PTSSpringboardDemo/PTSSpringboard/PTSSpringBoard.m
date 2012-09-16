@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #import "PTSSpringBoard.h"
 @implementation PTSSpringBoard
 
-@synthesize delegate, dataSource, editing;
+@synthesize delegate, dataSource, editing, updating;
 
 #pragma mark -
 #pragma mark Object-Lifecycle
@@ -117,8 +117,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             NSInteger collumnIdx = floor((float) (index % numberOfItemsPerPage) / numberOfRows);
             NSInteger rowIdx = (index % numberOfRows);
             
-            /*If animation is in editing mode (except for the first layouting), repositioning of all items is animated.*/
-            if ([self isEditing]) {
+            /*If animation is in editing mode (except for the first layouting, when updating the springboard), repositioning of all items is animated. Otherwise it will be unanimated.*/
+            if ([self isEditing] && ![self isUpdating]) {
                 [UIView animateWithDuration:0.25f animations:^(void){
                     [item setFrame:CGRectMake((rowIdx * (100.0f + rowGap)) + (pageNumber*itemsContainer.frame.size.width), (collumnIdx * (100.0f + columnGap)), sizePerItem.width, sizePerItem.height)];
                 }];
@@ -130,6 +130,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         }
     }
     
+    /*Sets updating to NO if it is set to YES.*/
+    if ([self isUpdating]) {
+        updating = NO;
+    }
+
     [super layoutSubviews];
 }
 
@@ -158,6 +163,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 }
 
 -(void)updateSpringboard {
+    /*Sets updating to YES. This is done for display reasons.*/
+    updating = YES;
+    
+    /*Does the updates.*/
     for (NSInteger i = 0;i<[[self dataSource]  numberOfItemsInSpringboard:self];i++) {
         [self updateItemAtIndex:i];
     }
@@ -205,11 +214,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             }
         }
     }
-    
-    
    
     [self setNeedsLayout];
-
 }
 
 #pragma mark -
@@ -233,9 +239,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             
             /*Activates the editing mode.*/
             [self toggleEditingMode:YES];
-            
-            /*Re-layouts the view.*/
-            [self setNeedsLayout];
         }
     }
 }

@@ -27,8 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <p>User-Interaction triggered events are reported to the delegate of the springboard, using the \ref PTSSpringBoardDelegate protocol. The protocol can be used to implement actions, that are triggered when \ref PTSSpringBoardItems are selected, moved or deleted by the user.</p>
  
     @author Ralph Gasser
-    @date 2012-09-16
-    @version 1.3
+    @date 2012-09-17
+    @version 1.4
     @copyright Copyright 2012, pontius software GmbH
  */
 
@@ -56,6 +56,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     /**This is an internal variable and should not be changed. It is used for caching when moving items around.*/
     @private NSInteger newIndex;
+    
+    /**This is an internal variable and should not be changed. It is marked as YES when the springboard is updating.*/
+    @private BOOL updating;
 }
 
 @property (nonatomic, weak) id delegate;
@@ -64,6 +67,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 @property (nonatomic, getter = isEditing, readonly) BOOL editing;
 
+@property (nonatomic, getter = isUpdating, readonly) BOOL updating;
 
 /**Updates all \ref PTSSpringBoardItem by invoking the data sources -(PTSSpringBoardItem*)springboard:itemForIndex: method. This will completely reload all items and cause the springboard to be re-layouted.
  */
