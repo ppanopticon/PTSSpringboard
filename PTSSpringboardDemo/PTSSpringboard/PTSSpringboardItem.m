@@ -166,9 +166,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     if ([delegate springboardIsEditing] && [self isMovable]) {
         /**Resumes the wiggeling animation for editing mode and resets the alpha to 1. Then informs the delegate, that dragging has ended.*/
         [UIView animateWithDuration:0.25 animations:^(void){
-            [self toggleWiggleAnimation:YES];
             self.alpha = 1.0;
         } completion:^(BOOL finished) {
+            [self toggleWiggleAnimation:YES];
             [[self delegate] springboardDidEndDraging:self];
         }];
     }

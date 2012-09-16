@@ -20,8 +20,6 @@
     self.mySpringboard.delegate = self;
     self.mySpringboard.dataSource = self;
     
-    self.mySpringboard.backgroundColor = [UIColor redColor];
-    
     [self.view addSubview:self.mySpringboard];
     
     items = [[NSMutableArray alloc] initWithObjects:
@@ -192,7 +190,7 @@
 
 -(void)springboard:(PTSSpringBoard *)springboard selectedItem:(PTSSpringBoardItem *)item atIndex:(NSInteger)index {
     if (![springboard isEditing]) {
-        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Entered editing mode..." message:[NSString stringWithFormat:@"You taped the item at position %d. It uses the item-identifier '%@'.", (index + 1), [item itemIdentifier]] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Taped item..." message:[NSString stringWithFormat:@"You taped the item at position %d. It uses the item-identifier '%@'.", (index + 1), [item itemIdentifier]] delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
     
         [alert show];
     }
