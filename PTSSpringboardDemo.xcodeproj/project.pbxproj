@@ -10,7 +10,6 @@
 		B5A9470516060CF1003ECB03 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9470416060CF1003ECB03 /* UIKit.framework */; };
 		B5A9470716060CF1003ECB03 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9470616060CF1003ECB03 /* Foundation.framework */; };
 		B5A9470916060CF1003ECB03 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A9470816060CF1003ECB03 /* CoreGraphics.framework */; };
-		B5A9470F16060CF1003ECB03 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5A9470D16060CF1003ECB03 /* InfoPlist.strings */; };
 		B5A9471116060CF1003ECB03 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9471016060CF1003ECB03 /* main.m */; };
 		B5A9471516060CF1003ECB03 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A9471416060CF1003ECB03 /* AppDelegate.m */; };
 		B5A9471716060CF1003ECB03 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B5A9471616060CF1003ECB03 /* Default.png */; };
@@ -41,7 +40,6 @@
 		B5A9470616060CF1003ECB03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B5A9470816060CF1003ECB03 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B5A9470C16060CF1003ECB03 /* PTSSpringboardDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PTSSpringboardDemo-Info.plist"; sourceTree = "<group>"; };
-		B5A9470E16060CF1003ECB03 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B5A9471016060CF1003ECB03 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B5A9471216060CF1003ECB03 /* PTSSpringboardDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PTSSpringboardDemo-Prefix.pch"; sourceTree = "<group>"; };
 		B5A9471316060CF1003ECB03 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				B5A9470C16060CF1003ECB03 /* PTSSpringboardDemo-Info.plist */,
-				B5A9470D16060CF1003ECB03 /* InfoPlist.strings */,
 				B5A9471016060CF1003ECB03 /* main.m */,
 				B5A9471216060CF1003ECB03 /* PTSSpringboardDemo-Prefix.pch */,
 				B5A9471616060CF1003ECB03 /* Default.png */,
@@ -226,7 +223,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5A9470F16060CF1003ECB03 /* InfoPlist.strings in Resources */,
 				B5A9471716060CF1003ECB03 /* Default.png in Resources */,
 				B5A9471916060CF1003ECB03 /* Default@2x.png in Resources */,
 				B5A9471B16060CF1003ECB03 /* Default-568h@2x.png in Resources */,
@@ -264,14 +260,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B5A9470D16060CF1003ECB03 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5A9470E16060CF1003ECB03 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		B5A9471C16060CF1003ECB03 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

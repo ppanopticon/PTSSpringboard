@@ -15,12 +15,14 @@
 @implementation ViewController
 @synthesize mySpringboard, items;
 - (void)viewDidLoad {
-    mySpringboard = [[PTSSpringBoard alloc] initWithFrame:self.view.bounds];
+    self.mySpringboard = [[PTSSpringBoard alloc] initWithFrame:self.view.bounds];
     
     self.mySpringboard.delegate = self;
     self.mySpringboard.dataSource = self;
     
-    [self.view addSubview:mySpringboard];
+    self.mySpringboard.backgroundColor = [UIColor redColor];
+    
+    [self.view addSubview:self.mySpringboard];
     
     items = [[NSMutableArray alloc] initWithObjects:
              [NSDictionary dictionaryWithObjectsAndKeys:

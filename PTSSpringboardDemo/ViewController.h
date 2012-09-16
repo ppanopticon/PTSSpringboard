@@ -11,11 +11,11 @@
 
 @interface ViewController : UIViewController <PTSSpringBoardDataSource, PTSSpringBoardDelegate> {
     
-    PTSSpringBoard * mySpringboard;
+    PTSSpringBoard * __strong mySpringboard;
     
     NSMutableArray * items;
 }
-@property (nonatomic) PTSSpringBoard * mySpringboard;
+@property (nonatomic, strong) PTSSpringBoard * mySpringboard;
 @property (nonatomic) NSMutableArray * items;
 
 @end

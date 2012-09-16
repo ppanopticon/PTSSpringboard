@@ -104,8 +104,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     [itemsContainer setContentSize:CGSizeMake(numberOfPages*itemsContainer.frame.size.width, itemsContainer.frame.size.height)];
     
-    CGFloat rowGap = ([[self superview] frame].size.width - numberOfRows * sizePerItem.width)/numberOfRows;
-    CGFloat columnGap = ([[self superview] frame].size.height - numberOfColumns * sizePerItem.height)/numberOfColumns;
+    CGFloat rowGap = ([[self superview] bounds].size.width - numberOfRows * sizePerItem.width)/numberOfRows;
+    CGFloat columnGap = ([[self superview] bounds].size.height - numberOfColumns * sizePerItem.height)/numberOfColumns;
     
     /*...and the positions of the individual items.*/
     for (PTSSpringBoardItem * item in itemsInOrder) {
@@ -125,6 +125,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             } else {
                 [item setFrame:CGRectMake((rowIdx * (100.0f + rowGap)) + (pageNumber*itemsContainer.frame.size.width), (collumnIdx * (100.0f + columnGap)), sizePerItem.width, sizePerItem.height)];
             }
+        } else {
+            NSLog(@"Error!");
         }
     }
     
