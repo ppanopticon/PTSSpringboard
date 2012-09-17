@@ -1,10 +1,19 @@
 PTSSpringBoard
+==============
+
+The PTSSpringBoard class provides the functionalities of a springboard as known from the iOS mainscreen. It supports moving and deleting items.
+
+## Requirements
+- QuartzCore.framework
+- Only implemented to work with ARC
+
+## Legal
 
 Copyright: Copyright 2012 by pontius software GmbH (Switzerland)
 Author: Ralph Gasser
 License: GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007
 
-IMPORTANT: Depends on QuartzCore.framework.
+## Description
 
 The PTSSpringBoard class provides the functionalities of a springboard as known from the iOS mainscreen. It supports moving and deleting items. 
 
