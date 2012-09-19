@@ -100,16 +100,20 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>delegate</b></td></tr>
 <tr class="memitem:aaa7589fcacb549c66ae160d1df1ef656"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa7589fcacb549c66ae160d1df1ef656"></a>
 id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr>
 <tr class="separator:aaa7589fcacb549c66ae160d1df1ef656"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacffd31e31b3f43c560aa6bf68503e1d"><td class="memItemLeft" align="right" valign="top">CGFloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_p_t_s_spring_board.html#aacffd31e31b3f43c560aa6bf68503e1d">itemSize</a></td></tr>
+<tr class="separator:aacffd31e31b3f43c560aa6bf68503e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a932f4f6b1611c260c39d36c9bea2f5e9"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_p_t_s_spring_board.html#a932f4f6b1611c260c39d36c9bea2f5e9">editing</a></td></tr>
 <tr class="separator:a932f4f6b1611c260c39d36c9bea2f5e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24bc76d71b79e9a4806751abea374dfb"><td class="memItemLeft" align="right" valign="top">BOOL&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_p_t_s_spring_board.html#a24bc76d71b79e9a4806751abea374dfb">updating</a></td></tr>
+<tr class="separator:a24bc76d71b79e9a4806751abea374dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The PTSSpringBoard is used to display a list of user-interactable items in a view that resembles the iOS Homescreen. The items are dynamically arranged on the view and, if necessary, on multiple pages. </p>
 <p>This class implements the behaviour of the PTSSpringBoard (a resizing behaviour, item-order, drawing and event handling) and uses delegation, to report user-interaction and to load content. The springboard needs a data-source which implements the <a class="el" href="protocol_p_t_s_spring_board_data_source-p.html">PTSSpringBoardDataSource</a> protocol. The data source provides the content and information on the basic behaviour of the springboard. </p>
 <p>User-Interaction triggered events are reported to the delegate of the springboard, using the <a class="el" href="protocol_p_t_s_spring_board_delegate-p.html">PTSSpringBoardDelegate</a> protocol. The protocol can be used to implement actions, that are triggered when PTSSpringBoardItems are selected, moved or deleted by the user.</p>
 <dl class="section author"><dt>Author</dt><dd>Ralph Gasser </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2012-09-16 </dd></dl>
-<dl class="section version"><dt>Version</dt><dd>1.3 </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2012-09-17 </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.5 </dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright 2012, pontius software GmbH </dd></dl>
 
 <p>Definition at line <a class="el" href="_p_t_s_spring_board_8h_source.html#l00035">35</a> of file <a class="el" href="_p_t_s_spring_board_8h_source.html">PTSSpringBoard.h</a>.</p>
@@ -136,7 +140,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr
 </dl>
 <p>When editing-mode is entered or left, the springboard is updated. </p>
 
-<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00060">60</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
+<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00063">63</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
 
 </div>
 </div>
@@ -161,7 +165,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00179">179</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
+<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00193">193</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
 
 </div>
 </div>
@@ -186,7 +190,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00164">164</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
+<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00178">178</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
 
 </div>
 </div>
@@ -204,7 +208,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr
 </div><div class="memdoc">
 <p>Updates all <a class="el" href="interface_p_t_s_spring_board_item.html">PTSSpringBoardItem</a> by invoking the data sources -(PTSSpringBoardItem*)springboard:itemForIndex: method. This will completely reload all items and cause the springboard to be re-layouted. </p>
 
-<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00158">158</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
+<p>Definition at line <a class="el" href="_p_t_s_spring_board_8m_source.html#l00168">168</a> of file <a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a>.</p>
 
 </div>
 </div>
@@ -232,6 +236,52 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr
 
 </div>
 </div>
+<a class="anchor" id="aacffd31e31b3f43c560aa6bf68503e1d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (CGFloat) itemSize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">write</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>The size of one springboard-item. You shouldn't choose the item-size too big - it could lead to undefined behaviour for dragging the items on small screens. 100.0f to 120.0f should be ok. </p>
+
+<p>Definition at line <a class="el" href="_p_t_s_spring_board_8h_source.html#l00052">52</a> of file <a class="el" href="_p_t_s_spring_board_8h_source.html">PTSSpringBoard.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a24bc76d71b79e9a4806751abea374dfb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">- (BOOL) updating</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">read</span><span class="mlabel">nonatomic</span><span class="mlabel">assign</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This is an internal variable and should not be changed. It is marked as YES when the springboard is updating. </p>
+
+<p>Definition at line <a class="el" href="_p_t_s_spring_board_8h_source.html#l00064">64</a> of file <a class="el" href="_p_t_s_spring_board_8h_source.html">PTSSpringBoard.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>/Users/rgasser/Documents/Programmieren/Objective-C/Klassen/PTSSpringboard/PTSSpringboardDemo/PTSSpringboard/<a class="el" href="_p_t_s_spring_board_8h_source.html">PTSSpringBoard.h</a></li>
 <li>/Users/rgasser/Documents/Programmieren/Objective-C/Klassen/PTSSpringboard/PTSSpringboardDemo/PTSSpringboard/<a class="el" href="_p_t_s_spring_board_8m_source.html">PTSSpringBoard.m</a></li>
@@ -239,7 +289,7 @@ id&#160;</td><td class="memItemRight" valign="bottom"><b>dataSource</b></td></tr
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Sep 16 2012 17:42:33 for PTSSpringboard by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Sep 19 2012 13:47:43 for PTSSpringboard by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.2
 </small></address>

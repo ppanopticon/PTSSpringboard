@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
     @author Ralph Gasser
     @date 2012-09-17
-    @version 1.4
+    @version 1.5
     @copyright Copyright 2012, pontius software GmbH
  */
 
@@ -48,6 +48,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     /**The \ref UIScrollView which contains the \ref PTSMenuItem Objects. This is an internal variable and no getters or setters are defined.*/
     @private UIScrollView * __strong itemsContainer;
     
+    /**The size of one springboard-item. You shouldn't choose the item-size too big - it could lead to undefined behaviour for dragging the items on small screens. 100.0f to 120.0f should be ok.*/
+    @private CGFloat itemSize;
+    
     /**NSArray containing the \ref PTSSpringBoardItems in order they are displayed. This is an internal variable and no getters or setters are defined.*/
     @private NSMutableArray * itemsInOrder;
     
@@ -59,11 +62,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     /**This is an internal variable and should not be changed. It is marked as YES when the springboard is updating.*/
     @private BOOL updating;
+    
 }
 
 @property (nonatomic, weak) id delegate;
 
 @property (nonatomic, weak) id dataSource;
+
+@property (nonatomic) CGFloat itemSize;
 
 @property (nonatomic, getter = isEditing, readonly) BOOL editing;
 

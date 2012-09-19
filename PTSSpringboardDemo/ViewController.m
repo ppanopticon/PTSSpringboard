@@ -154,7 +154,13 @@
     [item setLabel:[[[self items] objectAtIndex:index] objectForKey:@"label"]];
     [item setIcon:[[[self items] objectAtIndex:index] objectForKey:@"icon"]];
     [item setItemIdentifier:[[[self items] objectAtIndex:index] objectForKey:@"identifier"]];
-    [item setBadgeValue:[NSString stringWithFormat:@"%d", (index + 1)]];
+    
+    if (index < ([self numberOfItemsInSpringboard:springboard]) - 1) {
+         [item setBadgeValue:[NSString stringWithFormat:@"%d", (index * 90 + 1)]];
+    } else {
+        [item setBadgeValue:@"ABCDEFG"];
+    }
+    
      
      return item;
 }

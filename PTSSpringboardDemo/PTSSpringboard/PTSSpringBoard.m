@@ -19,7 +19,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #import "PTSSpringBoard.h"
 @implementation PTSSpringBoard
 
-@synthesize delegate, dataSource, editing, updating;
+@synthesize delegate, dataSource, itemSize, editing, updating;
 
 #pragma mark -
 #pragma mark Object-Lifecycle
@@ -42,6 +42,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         pageControl = [[UIPageControl alloc] initWithFrame:CGRectZero];
         pageControl.hidesForSinglePage = YES;
         [self addSubview:pageControl];
+        
+        /*Sets the default item-size.*/
+        self.itemSize = 100.0f;
         
         /*Initializes the items-array.*/
         itemsInOrder = [[NSMutableArray alloc] initWithCapacity:0];
@@ -88,7 +91,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     /*Now layouts the content-size of the item-container...*/
     NSInteger numberOfItems = [[self delegate] numberOfItemsInSpringboard:self];
     
-    CGSize sizePerItem = CGSizeMake(100.0f, 100.f)  ;
+    CGSize sizePerItem = CGSizeMake(self.itemSize, self.itemSize);
     
     NSInteger numberOfRows = floor(self.frame.size.width / sizePerItem.width);
     NSInteger numberOfColumns = floor(self.frame.size.height / sizePerItem.height);
@@ -120,10 +123,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             /*If animation is in editing mode (except for the first layouting, when updating the springboard), repositioning of all items is animated. Otherwise it will be unanimated.*/
             if ([self isEditing] && ![self isUpdating]) {
                 [UIView animateWithDuration:0.25f animations:^(void){
-                    [item setFrame:CGRectMake((rowIdx * (100.0f + rowGap)) + (pageNumber*itemsContainer.frame.size.width), (collumnIdx * (100.0f + columnGap)), sizePerItem.width, sizePerItem.height)];
+                    [item setFrame:CGRectMake((rowIdx * (self.itemSize + rowGap)) + (pageNumber*itemsContainer.frame.size.width), (collumnIdx * (self.itemSize + columnGap)), sizePerItem.width, sizePerItem.height)];
                 }];
             } else {
-                [item setFrame:CGRectMake((rowIdx * (100.0f + rowGap)) + (pageNumber*itemsContainer.frame.size.width), (collumnIdx * (100.0f + columnGap)), sizePerItem.width, sizePerItem.height)];
+                [item setFrame:CGRectMake((rowIdx * (self.itemSize + rowGap)) + (pageNumber*itemsContainer.frame.size.width), (collumnIdx * (self.itemSize + columnGap)), sizePerItem.width, sizePerItem.height)];
             }
         } else {
             NSLog(@"Error!");

@@ -27,7 +27,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  
     @author Ralph Gasser
     @date 2012-09-14
-    @version 1.2
+    @version 1.5
     @copyright Copyright 2012, pontius software GmbH
  */
 
@@ -35,16 +35,29 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     /**The delegate (usually a \ref PTSSpringBoard) that is informed, when user-interaction occurs with an item. Must implement the \ref PTSSpringBoardItemDelegate.*/
     @private id <PTSSpringBoardItemDelegate> __weak delegate;
     
-    /**The text if the springboard-item's label.*/
+    /**The text if the springboard-item's label. Texts that are too long can result in the label being to large for the item's view. In this case the label will be clipped. The exact number is depending on the size of the item and the font.*/
     @private NSString * labelText;
     
-    /**UIColor of the springboard's label.*/
+    /**The font of the springboard-items label text. Choosing values for label-size, that are too big, will result in the label being larger than the item's view. In this case the label will be clipped.*/
+    @private UIFont * labelFont;
+    
+    /**UIColor of the springboard's label text.*/
     @private UIColor * labelColor;
     
-    /**The text if the springboard-item's badge.*/
+    /**The text if the springboard-item's badge. Texts that are too long can result in the badge being to large for the item's view. In this case the badge will be clipped. The exact number is depending on the size of the item and the font. E.g. with an item size of 100px and a badge font-size of 14.0f, the badge can hold 6-7 characters without being clipped.*/
     @private NSString * badgeValue;
     
-    /**The icon that is displayed for this springboard-icon. it shouldn't be any bigger than 100x100 pixels.*/
+    /**The font of the springboard-items badge text. Choosing values for font-size, that are too big, will result in the badge being larger than the item's view. In this case, the badge will be clipped.*/
+    @private UIFont * badgeFont;
+    
+    /**The color of the badge.*/
+    @private UIColor * badgeColor;
+    
+    /**The color of the baged's stroke and the text.*/
+    @private UIColor * badgeStrokeColor;
+    
+    /**The icon that is displayed for this springboard-icon. You have to choose the size of your icon-image according to the size
+     of the springboard item, you defined in your \ref PTSSpringboardClass.*/
     @private UIImage * iconImage;
     
     /**An identifier-string. It can be used by the \ref PTSSpringBoard delegate, to trigger appropriate actions for the pressed springboard.*/
@@ -71,6 +84,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 @property (nonatomic, readonly) NSString * badgeValue;
 
 @property (nonatomic, readonly) UIColor * labelColor;
+
+@property (nonatomic, readonly) UIFont * labelFont;
+
+@property (nonatomic, readonly) UIColor * badgeColor;
+
+@property (nonatomic, readonly) UIColor * badgeStrokeColor;
+
+@property (nonatomic, readonly) UIFont * badgeFont;
 
 @property (nonatomic, getter = isSelected) BOOL selected;
 
