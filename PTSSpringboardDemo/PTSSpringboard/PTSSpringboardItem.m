@@ -2,19 +2,10 @@
 
 Copyright (C) 2012 pontius software GmbH, created by Ralph Gasser
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
+This program is free software: you can redistribute and/or modify
+it under the terms of the Createive Commons (CC BY-SA 3.0) license
 */
+
 
 
 #import "PTSSpringBoardItem.h"
@@ -49,13 +40,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         badgeStrokeColor = [UIColor whiteColor];
         
         /**Sets the default badge-font.*/
-        badgeFont = [UIFont systemFontOfSize:14.0f];
+        badgeFont = [UIFont systemFontOfSize:16.0f];
         
         /**Sets the defualt label-color.*/
         labelColor = [UIColor blackColor];
         
         /**Sets the default label-font.*/
-        labelFont = [UIFont systemFontOfSize:14.0f];
+        labelFont = [UIFont boldSystemFontOfSize:14.0f];
         
         /**Modifies drawing-behaviour.*/
         self.opaque = NO;
@@ -223,42 +214,45 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     /* and my frame!*/
     CGRect frame = self.bounds;
     
-    /* Height and width of the text.*/
-    CGFloat badgeTextWidth = [self.badgeValue sizeWithFont:[self badgeFont]].width;
-    CGFloat badgeTextHeight = [[self badgeFont] lineHeight];
-    
+    /* Height and width of the badge text.*/
+    CGSize badgeTextSize = [[self badgeValue] sizeWithFont:[self badgeFont]];
+
     /*Gets the height of the label text.*/
-    CGFloat labelHeight = [[self labelFont] lineHeight];
+    CGSize labelTextSize = [[self labelText] sizeWithFont:[self labelFont]];
 
     /**Draws the Icon. The space the icon has, is dependant on the size of the badge and the label. The icon is allways centered in horizontal direction.*/
-    [self.iconImage drawInRect:CGRectMake((CGRectGetWidth(frame) - (CGRectGetHeight(frame)-labelHeight-badgeTextHeight))/2, badgeTextHeight, CGRectGetHeight(frame)-labelHeight-badgeTextHeight, CGRectGetHeight(frame)-labelHeight-badgeTextHeight)];
+    [self.iconImage drawInRect:CGRectMake((CGRectGetWidth(frame) - (CGRectGetHeight(frame)-labelTextSize.height - 10.0f))/2, 10.0f, CGRectGetHeight(frame)-labelTextSize.height - 10.0f, CGRectGetHeight(frame)-labelTextSize.height - 10.0f)];
     
     /** Now draws the items label. The label is positioned at the most bottom right corner, and the labels rect size takes the full width of the item and the line height of the font. By using NSTextAlignmentCenter, the label-text ist allways centered horizontally.*/
     [[self labelColor]  set];
-    [self.labelText drawInRect:CGRectMake(0.0, CGRectGetHeight(frame) - labelHeight, frame.size.width, labelHeight) withFont:self.labelFont lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
+    [self.labelText drawInRect:CGRectMake(0.0, CGRectGetHeight(frame) - labelTextSize.height, frame.size.width, labelTextSize.height) withFont:self.labelFont lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
     
     /** Draws the badge if if necessary.*/
     if (self.badgeValue && ![[self badgeValue] isEqualToString:@"0"] && ![[self badgeValue] isEqualToString:@""]) {
         /*Height and width of the badge (dependant of the text)*/
-        CGFloat badgeHeight = badgeTextHeight + 2.0f;
-        CGFloat badgeWidth = ((badgeTextWidth + 10.0f) < badgeHeight) ? badgeHeight : (badgeTextWidth + 10.0f);
-        
-        /* Rect of the text.*/
-        CGRect textRect = CGRectMake(CGRectGetWidth(frame) - badgeWidth - 10.0f, CGRectGetMinY(frame) + 6.0f, badgeTextWidth, badgeTextHeight);
+        CGFloat badgeHeight = badgeTextSize.height + 2.0f;
+        CGFloat badgeWidth = ((badgeTextSize.width + 10.0f) < badgeHeight) ? badgeHeight : (badgeTextSize.width + 10.0f);
                 
         /* Shadow Declarations*/
-        UIColor* shadow = [UIColor whiteColor];
-        CGSize shadowOffset = CGSizeMake(1, 2);
-        CGFloat shadowBlurRadius = 5;
+        UIColor* innerShadow = [UIColor whiteColor];
+        CGSize innerShadowOffset = CGSizeMake(1, 2);
+        CGFloat innerShadowBlurRadius = 5;
+        UIColor* outerShadow = [UIColor blackColor];
+        CGSize outerShadowOffset = CGSizeMake(0, 2);
+        CGFloat outerShadowBlurRadius = 3;
         
         /* Rounded Rectangle Drawing*/
-        UIBezierPath * roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(CGRectGetWidth(frame) - badgeWidth - 16.0f, CGRectGetMinY(frame) + 5.0f, badgeWidth, badgeHeight) cornerRadius: 12.0f];
+        UIBezierPath * roundedRectanglePath = [UIBezierPath bezierPathWithRoundedRect: CGRectMake(CGRectGetWidth(frame) - badgeWidth - 10.0f, CGRectGetMinY(frame) + 10.0f, badgeWidth, badgeHeight) cornerRadius: 12.0f];
+        /*Outer Shadow drawing.*/
+        CGContextSaveGState(context);
+        CGContextSetShadowWithColor(context, outerShadowOffset, outerShadowBlurRadius, outerShadow.CGColor);
+
         [self.badgeColor setFill];
         [roundedRectanglePath fill];
         
         /* Rounded Rectangle Inner Shadow*/
-        CGRect roundedRectangleBorderRect = CGRectInset([roundedRectanglePath bounds], -shadowBlurRadius, -shadowBlurRadius);
-        roundedRectangleBorderRect = CGRectOffset(roundedRectangleBorderRect, -shadowOffset.width, -shadowOffset.height);
+        CGRect roundedRectangleBorderRect = CGRectInset([roundedRectanglePath bounds], -innerShadowBlurRadius, -innerShadowBlurRadius);
+        roundedRectangleBorderRect = CGRectOffset(roundedRectangleBorderRect, -innerShadowOffset.width, -innerShadowOffset.height);
         roundedRectangleBorderRect = CGRectInset(CGRectUnion(roundedRectangleBorderRect, [roundedRectanglePath bounds]), -1, -1);
         
         UIBezierPath* roundedRectangleNegativePath = [UIBezierPath bezierPathWithRect: roundedRectangleBorderRect];
@@ -267,12 +261,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         
         CGContextSaveGState(context);
         {
-            CGFloat xOffset = shadowOffset.width + round(roundedRectangleBorderRect.size.width);
-            CGFloat yOffset = shadowOffset.height;
+            CGFloat xOffset = innerShadowOffset.width + round(roundedRectangleBorderRect.size.width);
+            CGFloat yOffset = innerShadowOffset.height;
             CGContextSetShadowWithColor(context,
                                         CGSizeMake(xOffset + copysign(0.1, xOffset), yOffset + copysign(0.1, yOffset)),
-                                        shadowBlurRadius,
-                                        shadow.CGColor);
+                                        innerShadowBlurRadius,
+                                        innerShadow.CGColor);
             
             [roundedRectanglePath addClip];
             CGAffineTransform transform = CGAffineTransformMakeTranslation(-round(roundedRectangleBorderRect.size.width), 0);
@@ -280,6 +274,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             [[UIColor grayColor] setFill];
             [roundedRectangleNegativePath fill];
         }
+        
+        CGContextRestoreGState(context);
+        
         CGContextRestoreGState(context);
         
         /*Drawing of the stroke...*/
@@ -287,9 +284,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         roundedRectanglePath.lineWidth = 2;
         [roundedRectanglePath stroke];
         
+        /* Rect of the text.*/
+        CGRect textRect = CGRectMake(roundedRectangleBorderRect.origin.x + 1.0f, roundedRectangleBorderRect.origin.y + badgeTextSize.height/2 - 1.0f, roundedRectangleBorderRect.size.width, badgeTextSize.height);
+        
         /* ...and the text.*/
         [[self badgeStrokeColor] setFill];
-        [self.badgeValue drawInRect: textRect withFont:self.badgeFont lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentLeft];
+        [self.badgeValue drawInRect: textRect withFont:self.badgeFont lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
     }
     
     if ([self isDeletable]) {

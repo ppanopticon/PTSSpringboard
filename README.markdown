@@ -15,7 +15,7 @@ Furthermore the classes have been written using the iOS6 SDK. It doesn't use iOS
 ## Legal
 Copyright 2012 by pontius software GmbH (Switzerland), All rights reserved
 
-The code and its documentation are provided free of charge under the terms of the GNU GENERAL PUBLIC LICENSE, Version 3, 29 June 2007. If you want to use it for commercial applications, please contact the author.
+The code and its documentation are provided free of charge under the terms of the Creative Commons BY-SA 3.0 license.
 
 ## Description
 The PTSSpringBoard class provides the functionalities of a springboard as known from the iOS mainscreen. It supports moving and deleting items. 
