@@ -275,7 +275,6 @@ it under the terms of the Createive Commons (CC BY-SA 3.0) license
             [roundedRectangleNegativePath fill];
         }
         
-        NSLineBreakMode
         CGContextRestoreGState(context);
         
         CGContextRestoreGState(context);
