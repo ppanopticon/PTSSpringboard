@@ -18,7 +18,7 @@ it under the terms of the Createive Commons (CC BY-SA 3.0) license
  
     @author Ralph Gasser
     @date 2012-09-17
-    @version 1.5
+    @version 1.6
     @copyright Copyright 2012, pontius software GmbH
  */
 

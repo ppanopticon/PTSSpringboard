@@ -223,9 +223,9 @@ it under the terms of the Createive Commons (CC BY-SA 3.0) license
     /**Draws the Icon. The space the icon has, is dependant on the size of the badge and the label. The icon is allways centered in horizontal direction.*/
     [self.iconImage drawInRect:CGRectMake((CGRectGetWidth(frame) - (CGRectGetHeight(frame)-labelTextSize.height - 10.0f))/2, 10.0f, CGRectGetHeight(frame)-labelTextSize.height - 10.0f, CGRectGetHeight(frame)-labelTextSize.height - 10.0f)];
     
-    /** Now draws the items label. The label is positioned at the most bottom right corner, and the labels rect size takes the full width of the item and the line height of the font. By using NSTextAlignmentCenter, the label-text ist allways centered horizontally.*/
+    /** Now draws the items label. The label is positioned at the most bottom right corner, and the labels rect size takes the full width of the item and the line height of the font. By using UITextAlignmentCenter, the label-text ist allways centered horizontally.*/
     [[self labelColor]  set];
-    [self.labelText drawInRect:CGRectMake(0.0, CGRectGetHeight(frame) - labelTextSize.height, frame.size.width, labelTextSize.height) withFont:self.labelFont lineBreakMode:NSLineBreakByTruncatingTail alignment:NSTextAlignmentCenter];
+    [self.labelText drawInRect:CGRectMake(0.0, CGRectGetHeight(frame) - labelTextSize.height, frame.size.width, labelTextSize.height) withFont:self.labelFont lineBreakMode:UILineBreakModeTailTruncation alignment:UITextAlignmentCenter];
     
     /** Draws the badge if if necessary.*/
     if (self.badgeValue && ![[self badgeValue] isEqualToString:@"0"] && ![[self badgeValue] isEqualToString:@""]) {
@@ -275,6 +275,7 @@ it under the terms of the Createive Commons (CC BY-SA 3.0) license
             [roundedRectangleNegativePath fill];
         }
         
+        NSLineBreakMode
         CGContextRestoreGState(context);
         
         CGContextRestoreGState(context);
@@ -289,7 +290,7 @@ it under the terms of the Createive Commons (CC BY-SA 3.0) license
         
         /* ...and the text.*/
         [[self badgeStrokeColor] setFill];
-        [self.badgeValue drawInRect: textRect withFont:self.badgeFont lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
+        [self.badgeValue drawInRect: textRect withFont:self.badgeFont lineBreakMode: UILineBreakModeWordWrap alignment: UITextAlignmentCenter];
     }
     
     if ([self isDeletable]) {

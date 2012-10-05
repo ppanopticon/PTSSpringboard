@@ -10,8 +10,6 @@ Ralph Gasser (pontius software GmbH)
 * QuartzCore.framework
 * Only implemented to work with ARC
 
-Furthermore the classes have been written using the iOS6 SDK. It doesn't use iOS6 specific features - but the new enumerations for line-break and text-alignment.  If you want to use the class with older SDK's, just replace those with the old enumerations.
-
 ## Legal
 Copyright 2012 by pontius software GmbH (Switzerland), All rights reserved
 

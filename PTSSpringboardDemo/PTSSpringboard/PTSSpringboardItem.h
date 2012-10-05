@@ -17,7 +17,7 @@ Copyright (C) 2012 pontius software GmbH, created by Ralph Gasser
  
     @author Ralph Gasser
     @date 2012-09-14
-    @version 1.5
+    @version 1.6
     @copyright Copyright 2012, pontius software GmbH
  */
 
@@ -53,13 +53,13 @@ Copyright (C) 2012 pontius software GmbH, created by Ralph Gasser
     /**An identifier-string. It can be used by the \ref PTSSpringBoard delegate, to trigger appropriate actions for the pressed springboard.*/
     @private NSString * itemIdentifier;
     
-    /**The item is marked for selection. This information is used by the \ref PTSSpringBoardClass for display and layout reason.*/
+    /**The item is marked for selection. The information is used by the \ref PTSSpringBoard class for display and layout reason.*/
     @private BOOL selected;
     
-    /**The item is marked as deletable. This infromation is set by the \ref PTSSpringBoardClass for display, layout and handling reason.*/
+    /**The item is marked as deletable. This is a cached value and determined by the \ref PTSSpringboardDataSource. The property is set by the \ref PTSSpringBoard class for display, layout and handling reason.*/
     @private BOOL deletable;
     
-    /**The item is marked as movable. This infromation is set by the \ref PTSSpringBoardClass for display, layout and handling reason.*/
+    /**The item is marked as movable. This is a cached value and determined by the \ref PTSSpringboardDataSource. The property is set by the \ref PTSSpringBoard class for display, layout and handling reason.*/
     @private BOOL movable;
 }
 
